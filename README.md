@@ -1,3 +1,11 @@
+# Yesod Web App
+The main file is in helloworld.hs. To see the Html/Css/Js in the file search for the following:
+- `hamlet` for Html code
+- `cassius` for Css code
+- `julius` for Js code
+
+Below is the default readme file that was automatically generated.
+
 ## Haskell Setup
 
 1. If you haven't already, [install Stack](https://haskell-lang.org/get-started)
