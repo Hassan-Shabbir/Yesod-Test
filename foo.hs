@@ -13,11 +13,11 @@ import           Yesod.Auth.OAuth2.Google
 
 -- Replace with Google client ID.
 clientId :: Text
-clientId = "651837639044-vj9quhrfhcn1742hujini9i9uib3ndah.apps.googleusercontent.com"
+clientId = "some text"
 
 -- Replace with Google secret ID.
 clientSecret :: Text
-clientSecret = "w7wgbXVSLQ9fmMKNBk9Sc6Jo"
+clientSecret = "some text"
 
 data App = App
     { httpManager :: Manager
