@@ -140,10 +140,10 @@ instance YesodAuth HelloWorld where
     --liftIO $ print $ decodeUtf8 <$> M.lookup "accessToken" sess
     --liftIO $ putStrLn "!@!@!@Credentials Identity:"
     --liftIO $ print $ decodeUtf8 <$> M.lookup "credsIdent" sess
-    liftIO $ putStrLn "\n\n\n\n\n\n"
-    liftIO $ do
-      jsonInfo <- decodeUtf8 <$> M.lookup "userResponse" sess
-    liftIO $ putStrLn "\n\n\n\n\n\n"
+    --liftIO $ putStrLn "\n\n\n\n\n\n"
+    --liftIO $ do
+    --  jsonInfo <- decodeUtf8 <$> M.lookup "userResponse" sess
+    --liftIO $ putStrLn "\n\n\n\n\n\n"
     --liftIO $ putStrLn "!@!@!@User Response:"
     --liftIO $ print $ decodeUtf8 <$> M.lookup "userResponse" sess
     return $ Authenticated "1"
@@ -186,8 +186,7 @@ data Person = Person
   , pAge :: Maybe Int
   , pUsername :: Text
   , pPassword :: Text
-  }
-  deriving (Eq, Ord, Show, Read)
+  } deriving (Eq, Ord, Show, Read)
 
 personForm :: Html -> MForm Handler (FormResult Person, Widget)
 personForm = renderDivs $ Person
@@ -329,7 +328,7 @@ getMathR = defaultPage $ do
 
       function f() {
         // lame autocompletion, works quite well surprisingly, is it too slow?
-        // TODO ask ahson which commands he will use with his students
+        // TODO ask ahson which commands he will use with his students and add them
         var sPrime = input.value
           // paired commands
           .replace(/\(  /, '\\left( \\right)')
@@ -444,7 +443,7 @@ header = do
       border: 1px solid #000
   |]
   [whamlet|
-    <!-- probably add a nav bar here etc. -->
+    <!-- probably add a nav bar here, etc. -->
     <h1>This is Ahson's Website!
     $maybe message <- mMessage
       <p .err>#{message}
@@ -458,9 +457,9 @@ footer = do
   <footer style=background:#eee>
     <h3>Footer
     $forall route <- [HomeR, TeacherR, JsonR, MathR] 
-      $with sr <- show route
-        $with dr <- (take ((length sr) - 1) sr) ++ " Page"
-          <a href=@{route}>#{T.pack $ dr}
+      $with showRoute <- show route
+        $with displayRoute <- (take ((length showRoute) - 1) showRoute) ++ " Page"
+          <a href=@{route}>#{T.pack $ displayRoute}
           <br>
     <p>&#127279; (Copyleft) Hassan Shabbir #{T.pack $ show $ year}
   |]

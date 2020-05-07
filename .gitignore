@@ -21,3 +21,4 @@ cabal.sandbox.config
 \#*
 test2.cabal
 secrets
+.zhistory

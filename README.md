@@ -1,8 +1,24 @@
 # Yesod Web App
-The main file is in helloworld.hs. To see the Html/Css/Js in the file search for the following:
+To setup haskell on your computer, see the next section titled "Haskell Setup". This will take forever, since it downloads
+all relevant Haskell files and compiler.
+Then, git clone this project and `cd` into it.
+Finally, run the following command: `stack runghc helloworld.hs` to run the correct file on localhost, port 3000.
+
+The main file is in helloworld.hs, which contains everything regarding the website (ie. routing and databases, etc.). 
+This file also contains some notes taken while reading https://www.yesodweb.com/book at the end of the file.
+
+To see the Html/Css/Js in the file helloworld.hs search for the following:
 - `hamlet` for Html code
 - `cassius` for Css code
 - `julius` for Js code
+
+Other files of interest, that may not be used directly:
+- `app/main.hs` is the main entry point of the file
+- `test3.sqlite3` and `test2.sqlite3` are the SQLite database files
+- `foo.hs` contains a simple 
+- `src/Application` contains the definition appMain that is usually run
+- `README.md` is this current file
+- `package.yaml`, `stack.yaml`, and `test2.cabal` contain settings for packages
 
 Below is the default readme file that was automatically generated.
 
