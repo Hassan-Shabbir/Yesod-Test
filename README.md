@@ -1,6 +1,6 @@
 # Yesod Web App
-To setup haskell on your computer, see the next section titled "Haskell Setup". This will take forever, since it downloads
-all relevant Haskell files and compiler.
+To setup haskell on your computer, see the next section titled "Haskell Setup" to install `stack` the build tool for Haskell.
+This will take forever, since it downloads all relevant Haskell files and compiler.
 Then, git clone this project and `cd` into it.
 Finally, run the following command: `stack runghc helloworld.hs` to run the correct file on localhost, port 3000.
 
